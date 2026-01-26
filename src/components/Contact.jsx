@@ -69,7 +69,7 @@ const Contact = () => {
           <div className="contact-item highlight">
             <FaLinkedin className="contact-icon linkedin" />
             <a
-              href="https://www.linkedin.com/in/khaji-shanur-948a63363"
+              href="https://www.linkedin.com/in/khaji-shanur-122517280/"
               target="_blank"
               rel="noreferrer"
             >

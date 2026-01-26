@@ -599,7 +599,7 @@ body {
   border: 1px solid #38bdf8;
 }
 
-/* ========== LARGE TABLETS (≤ 1024px) ========== */
+/* ====== LARGE TABLETS (≤ 1024px) ====== */
 @media (max-width: 1024px) {
   .section {
     min-height: auto;
@@ -630,9 +630,9 @@ body {
   }
 }
 
-/* ========== TABLETS (≤ 768px) ========== */
+/* ====== TABLETS (≤ 768px) ====== */
 @media (max-width: 768px) {
-  /* Navbar -> hamburger */
+  /* Navbar -> hamburger (you'll toggle .open in React) */
   .nav-toggle {
     display: block;
   }
@@ -647,7 +647,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem 0;
-    display: none;          /* add .open in React to show */
+    display: none;
   }
 
   .nav-links.open {
@@ -705,11 +705,11 @@ body {
     padding: 1rem 1.4rem;
   }
 
-  /* Skills & projects */
+  /* Skills & projects: two cards per row when possible */
   .skills-grid,
   .cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
   }
 
   /* Education */
@@ -733,7 +733,7 @@ body {
   }
 }
 
-/* ========== SMALL PHONES (≤ 480px) ========== */
+/* ====== SMALL PHONES (≤ 480px) ====== */
 @media (max-width: 480px) {
   .navbar {
     padding: 0 1rem;
@@ -767,16 +767,25 @@ body {
     font-size: 1.7rem;
   }
 
+  /* Stats full‑width */
   .about-stat-card {
     width: 100%;
     min-width: 0;
   }
 
+  /* Skills & projects: one card per row, full width */
   .skills-grid,
   .cards-grid {
     grid-template-columns: 1fr;
+    gap: 0.9rem;
   }
 
+  .skill-card,
+  .project-card {
+    width: 100%;
+  }
+
+  /* Education cards stack vertically */
   .education-card {
     flex-direction: column;
     align-items: flex-start;
@@ -787,6 +796,7 @@ body {
     height: 180px;
   }
 
+  /* Contact text smaller */
   .contact-item {
     font-size: 0.9rem;
     gap: 12px;
@@ -800,41 +810,3 @@ body {
 }
 
 
-/* ===== Default (desktop) remains same ===== */
-/* .skills-grid and .cards-grid you already have */
-
-/* ===== Tablets: 2 cards per row when space is smaller ===== */
-@media (max-width: 900px) {
-  .skills-grid,
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.2rem;
-  }
-}
-
-/* ===== Small tablets / large phones: 2 cards if possible ===== */
-@media (max-width: 700px) {
-  .skills-grid,
-  .cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-  }
-}
-
-/* ===== Small phones: 1 card full‑width ===== */
-@media (max-width: 480px) {
-  .skills-grid,
-  .cards-grid {
-    grid-template-columns: 1fr;   /* each card takes full mobile width */
-    gap: 0.9rem;
-  }
-
-  .skill-card,
-  .project-card {
-    width: 100%;
-  }
-}
-
-
-
-  
